@@ -1,6 +1,3 @@
-//HELLO WORLD///
-
-
 /**
  * Entity class to represent "things" in the game: players, flags, jails, bases, etc. 
  */
