@@ -27,15 +27,17 @@ public class CaptureTheFlag{
 
     Player p,q;
     
-    int NUM_PLAYERS = 25;
+    int NUM_PLAYERS = 1;
     
     for(int i=0; i<NUM_PLAYERS; i+=1){
       // create a player and register them with territory 1
-      p = new Seeker(f, 1, "Cat van Kittenish", 12, "blues", 'b', Math.random()*400+10, Math.random()*500+10);
+      p = new RandomWalker(f, 1, "Cat van Kittenish", 12, "blues", 'b', Math.random()*400+10, Math.random()*500+10);
       
       // create a player and register them with territory 2
-      q = new Seeker(f, 2, "Bunny El-Amin", 7, "reds", 'r', Math.random()*400+410, Math.random()*500+10);
+      q = new Catcher(f, 2, "Bunny El-Amin", 7, "reds", 'r', Math.random()*400+410, Math.random()*500+10);
     }
+    
+   
     
     
     /* ------------------------------------------- */
@@ -67,7 +69,7 @@ public class CaptureTheFlag{
       }
       
       // uncomment this if game is moving too fast , sleep for 10 ms
-      //try{ Thread.sleep(10); } catch(Exception e) {}
+      try{ Thread.sleep(1); } catch(Exception e) {}
       
       gameRunning = f.gameStillRunning();
     }

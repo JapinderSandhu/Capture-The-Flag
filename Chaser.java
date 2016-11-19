@@ -1,8 +1,9 @@
-public class Seeker extends Player{
+public class Chaser extends Player{
   
     
    @Override
   public void play(Field field){
+     setSpeed(field);
        
      if( pickUpFlag(field) == true){
        this.speedX = 0;
@@ -38,30 +39,32 @@ public class Seeker extends Player{
     * @param x is the initial x position of this player
     * @param y is the initial y position of this player
     */
-  public Seeker(Field f, int side, String name, int number, String team,char symbol, double x, double y){
+  public Chaser(Field f, int side, String name, int number, String team,char symbol, double x, double y){
     super(f, side, name, number, team, symbol, x, y);
     //this.speedX = Math.random()*4-2;
     //this.speedY = Math.random()*4-2;
-    setSpeed(f);
+    
   }
+  double speed = Math.random()*4;
+  double multiplier = 0;
     
+  double directionX = 0;
+  double directionY = 0;
   private void setSpeed(Field field){
-    
-    double speed = Math.random()*2;
-    double multiplier = 0;
-    
-    double directionX = 0;
-    double directionY = 0;
+   
     
     if( this.team.equals("reds") ){
+      
+      
     
-      directionX = field.getFlag1Position()[0]-x;
-      directionY = field.getFlag1Position()[1]-y;
+      directionX = field.team1.get(0).x-x;
+      directionY = field.team1.get(0).y-y;
     
     }
     else{
-      directionX = field.getFlag2Position()[0]-x;
-      directionY = field.getFlag2Position()[1]-y;
+      
+      directionX = field.team2.get(0).x-x;
+      directionY = field.team2.get(0).y-y;
     
     }
     multiplier = Math.sqrt(Math.pow(speed,2)/(Math.pow(directionX,2)+Math.pow(directionY,2)));

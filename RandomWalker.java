@@ -18,12 +18,12 @@ public class RandomWalker extends Player{
     //      updatePosition(1,field);
     // this is now removed.  
     //
-  if(( (x <= field.maxX-15) && (y <= field.maxY-15) ) && ( (x >= field.minX) && (y >= field.minY) )){
-     
+    if(( (x <= field.maxX-15) && (y <= field.maxY-15) ) && ( (x >= field.minX) && (y >= field.minY) )){
+      
     }
     else{
-    this.speedX = -this.speedX;
-    this.speedY = -this.speedY;
+      this.speedX = -this.speedX;
+      this.speedY = -this.speedY;
     
    
    
@@ -51,8 +51,8 @@ public class RandomWalker extends Player{
     */
   public RandomWalker(Field f, int side, String name, int number, String team,char symbol, double x, double y){
     super(f, side, name, number, team, symbol, x, y);
-    this.speedX = Math.random()*4-2;
-    this.speedY = Math.random()*4-2;
+    this.speedX = Math.random()*6-2;
+    this.speedY = Math.random()*6-2;
   }
   
 }
