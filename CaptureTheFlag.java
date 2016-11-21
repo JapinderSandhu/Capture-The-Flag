@@ -28,13 +28,14 @@ public class CaptureTheFlag{
     Player p,q;
     
     int NUM_PLAYERS = 1;
+    // loop that creates objects
     
     for(int i=0; i<NUM_PLAYERS; i+=1){
       // create a player and register them with territory 1
-      p = new RandomWalker(f, 1, "Cat van Kittenish", 12, "blues", 'b', Math.random()*400+10, Math.random()*500+10);
+      p = new Stopping(f, 1, "Cat van Kittenish", 12, "blues", 'b', Math.random()*400+10, Math.random()*500+10);
       
       // create a player and register them with territory 2
-      q = new Catcher(f, 2, "Bunny El-Amin", 7, "reds", 'r', Math.random()*400+410, Math.random()*500+10);
+      q = new Stopping(f, 2, "Bunny El-Amin", 7, "reds", 'r', Math.random()*400+410, Math.random()*500+10);
     }
     
    

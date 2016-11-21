@@ -1,4 +1,13 @@
-public class Catcher extends Player{
+
+/*
+  * 
+  * COMP 1406, Assignment 7, Problem 6 (Catcher)
+  * Japinder Sandhu, 101021899, 11/21/2016 
+  * 
+  *
+  */
+
+class Catcher extends Player{
   
     
    @Override

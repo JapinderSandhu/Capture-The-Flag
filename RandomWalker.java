@@ -1,3 +1,12 @@
+
+/*
+  * 
+  * COMP 1406, Assignment 7, Problem 4 (RandomWalker)
+  * Japinder Sandhu, 101021899, 11/21/2016 
+  * 
+  *
+  */
+
 public class RandomWalker extends Player{
   
     
@@ -18,9 +27,14 @@ public class RandomWalker extends Player{
     //      updatePosition(1,field);
     // this is now removed.  
     //
+    
+    //if object is within barrier
     if(( (x <= field.maxX-15) && (y <= field.maxY-15) ) && ( (x >= field.minX) && (y >= field.minY) )){
+      //do nothing
       
     }
+    
+    //if else negate the speed
     else{
       this.speedX = -this.speedX;
       this.speedY = -this.speedY;

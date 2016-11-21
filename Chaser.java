@@ -1,10 +1,19 @@
+
+/*
+  * 
+  * COMP 1406, Assignment 7, Problem 5 (Chaser)
+  * Japinder Sandhu, 101021899, 11/21/2016 
+  * 
+  *
+  */
+
 public class Chaser extends Player{
   
     
    @Override
   public void play(Field field){
      setSpeed(field);
-       
+       //if object picks up flag, switch speed to zero
      if( pickUpFlag(field) == true){
        this.speedX = 0;
        this.speedY = 0;
@@ -45,6 +54,8 @@ public class Chaser extends Player{
     //this.speedY = Math.random()*4-2;
     
   }
+  
+  //attributes
   double speed = Math.random()*4;
   double multiplier = 0;
     
@@ -56,17 +67,19 @@ public class Chaser extends Player{
     if( this.team.equals("reds") ){
       
       
-    
+    //gets coordinates of other team object
       directionX = field.team1.get(0).x-x;
       directionY = field.team1.get(0).y-y;
     
     }
     else{
-      
+     //gets coordinates of other team object
       directionX = field.team2.get(0).x-x;
       directionY = field.team2.get(0).y-y;
     
     }
+    
+    //equation for direct path towards set object
     multiplier = Math.sqrt(Math.pow(speed,2)/(Math.pow(directionX,2)+Math.pow(directionY,2)));
     speedX = directionX*multiplier;
     speedY = directionY*multiplier;

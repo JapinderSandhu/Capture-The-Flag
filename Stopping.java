@@ -1,3 +1,12 @@
+
+/*
+  * 
+  * COMP 1406, Assignment 7, Problem 2 (Stopping)
+  * Japinder Sandhu, 101021899, 11/21/2016 
+  * 
+  *
+  */
+
 public class Stopping extends Player{
   
     
@@ -18,9 +27,13 @@ public class Stopping extends Player{
     //      updatePosition(1,field);
     // this is now removed.  
     //
+    
+    // if object is within barrier
   if(( (x <= field.maxX-15) && (y <= field.maxY-15) ) && ( (x >= field.minX) && (y >= field.minY) )){
+    //then do nothing
      
     }
+  //if else, change speed to zero
     else{
     this.speedX = 0;
     this.speedY = 0;
